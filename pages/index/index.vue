@@ -251,16 +251,12 @@ export default {
         } else if (that.$refs.mescrollRef && typeof that.$refs.mescrollRef.endSuccess === "function") {
           that.$refs.mescrollRef.endSuccess( newData.length,hasNext)
         }
-        return;
-        that.storeList = testData.storeList;
-        that.showFoot = true;
-        this.$refs.mescrollRef.mescroll.endSuccess(4)
       }).catch(err => {
         uni.hideLoading();
         uni.showToast({
           icon: 'none',
           position: 'bottom',
-          title: '网络连接失败！'
+          title: 'Error del servidor！'
         });
       });
     },
